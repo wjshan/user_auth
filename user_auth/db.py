@@ -7,11 +7,12 @@ engine = create_engine(
     settings.db.uri,
     echo=settings.db.echo,
     connect_args=settings.db.connect_args,
+    #pool_size=10,
 )
 
 
-def create_db_and_tables(engine):
-    SQLModel.metadata.create_all(engine)
+# def create_db_and_tables(engine):
+#     SQLModel.metadata.create_all(engine)
 
 
 def get_session():

@@ -5,9 +5,9 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
 from .config import settings
-from .db import create_db_and_tables, engine
+from .db import  engine
 from .routes import main_router
-
+from fastapi.logger import logger
 
 def read(*paths, **kwargs):
     """Read the contents of a text file safely.
@@ -54,6 +54,6 @@ if settings.server and settings.server.get("cors_origins", None):
 app.include_router(main_router)
 
 
-@app.on_event("startup")
-def on_startup():
-    create_db_and_tables(engine)
+# @app.on_event("startup")
+# def on_startup():
+#     # 启动完成回调函数

@@ -4,7 +4,8 @@
 # or run `make init` to create this file automatically based on the template.
 # You can also run `make switch-to-poetry` to use the poetry package manager.
 fastapi
-uvicorn
+uvicorn[standard]
+gunicorn
 sqlmodel
 typer
 dynaconf
@@ -12,3 +13,10 @@ jinja2
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
+databases[postgresql]
+alembic
+starlette
+pydantic
+pytest
+SQLAlchemy
+setuptools

@@ -1,2 +1,12 @@
 site_name: user_auth
-theme: readthedocs
+theme:
+  name: readthedocs
+  locale: en
+copyright: copyright @dan dan
+
+nav:
+  - index.md
+  - design.md
+  - OAuth2.0:
+      - OAuth2.0/authorization_code.md
+      - OAuth2.0/simple_code.md
