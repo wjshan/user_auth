@@ -135,3 +135,6 @@ dmypy.json
 .github/templates/*
 .idea/
 
+# pdm
+.pdm.toml
+pdm.lock

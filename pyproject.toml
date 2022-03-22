@@ -1,0 +1,63 @@
+[project]
+name = "user_auth"
+version = "0.1.0"
+description = ""
+authors = [
+    { name = "dandan", email = "454273687@qq.com" },
+]
+license-expression = "MIT"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "gunicorn",
+    "sqlmodel",
+    "typer",
+    "dynaconf",
+    "jinja2",
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
+    "python-multipart",
+    "databases[postgresql]",
+    "alembic",
+    "starlette",
+    "pydantic",
+    "sqlalchemy",
+    "setuptools"
+]
+requires-python = ">=3.9.0"
+
+[project.urls]
+Homepage = ""
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "coverage",
+    "flake8",
+    "black",
+    "isort",
+    "pytest-cov",
+    "codecov",
+    "mypy",
+    "gitchangelog",
+    "mkdocs",
+]
+[tool.pdm]
+[[tool.pdm.source]]
+name = "pypi"
+url = "https://pypi.douban.com/simple"
+verify_ssl = true
+
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pre-commit>=2.17.0",
+]
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
+
+[tool.pdm.scripts]
+_.env_file = ".env"
+start.cmd = "uvicorn user_auth.app:app --reload --port=8001 --host=0.0.0.0"
+

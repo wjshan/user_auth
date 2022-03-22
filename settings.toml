@@ -5,10 +5,10 @@ dynaconf_merge = true
 echo = true
 
 [development.server]
-log_level = "debug"
 access_log = true
-reload = true
 cors_origins = ["*"]
+log_level = "debug"
+reload = true
 
 [production]
 dynaconf_merge = true
